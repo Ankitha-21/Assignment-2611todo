@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <form id="frm">
+        <input id="ip" type="text">
+        <input type="submit">
+    </form>
+    <ul id="list"></ul>
+    <script>
+        let form=document.getElementById("frm");
+        let ip=document.getElementById("ip");
+        let list=document.getElementById("list");
+        form.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            let ltm=document.createElement("li");
+            ltm.innerText=ip.value+" ";
+            let btn=document.createElement("button");
+            btn.addEventListener("click",()=>{
+                list.removeChild(ltm);
+            })
+            btn.innerHTML="delete"
+            let edit=document.createElement("button");
+            edit.innerText="Edit";
+            edit.addEventListener("click",()=>{
+
+            })
+            ltm.appendChild(btn);
+            list.appendChild(ltm);
+            ip.value=""
+        })
+    </script>
+</body>
+</html>
